@@ -890,7 +890,7 @@ NSString *const errorMethod = @"error";
       [_captureDevice unlockForConfiguration];
     }
   } else {
-    if (!_captureDevice.hasFlash) {
+    if (!_captureDevice.hasFlash && mode != FlashModeOff) {
       result([FlutterError errorWithCode:@"setFlashModeFailed"
                                  message:@"Device does not have flash capabilities"
                                  details:nil]);
